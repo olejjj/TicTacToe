@@ -11,7 +11,8 @@ body {
     color: #EFECEC;
     background-color: #363434;
     display: grid;
-    height: 100vh;
+    min-height: 100dvh;
+
 
     grid-template-areas:
         "nav"
@@ -21,6 +22,14 @@ body {
     grid-template-rows: auto 2fr 1fr;
 }
 
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    border: 2px solid green;
+}
+
+/*navigation*/
 
 nav {
     grid-area: nav;
@@ -47,17 +56,37 @@ nav {
     display: none;
 }
 
+/*playground*/
+
 main {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: main;
     border: 2px solid red;
 }
 
-.wrapper {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-    border: 2px solid green;
+.playground {
+
+    width: min(80vw, 70vh);
+    height: min(80vw, 70vh);
+    max-width: 30rem;
+    max-height: 30rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #62929A;
+    gap: 3px;
+    opacity: 0.6;
+
 }
+
+.cell {
+    aspect-ratio: 1;
+    background-color: #363434;
+}
+
 
 footer {
     grid-area: footer;
@@ -67,6 +96,7 @@ footer {
 h1 {
     font-weight: 300;
     margin-right: 10px;
+    text-shadow: 3px 3px 5px black;
 }
 
 @media (width >= 768px) {
@@ -89,4 +119,5 @@ h1 {
     .nav-items a:hover {
         color: #62929A;
     }
+
 }
