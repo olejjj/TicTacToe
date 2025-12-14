@@ -2,15 +2,275 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    color: #EFECEC;
+    background-color: #363434;
+    display: grid;
+    min-height: 100dvh;
+
+
+    grid-template-areas:
+        "nav"
+        "main"
+        "footer";
+
+    grid-template-rows: auto 2fr 1fr;
+}
+
+/*navigation*/
+h1 {
+    font-weight: 300;
+    margin-right: 10px;
+    text-shadow: 3px 3px 5px black;
+}
+
+nav {
+    grid-area: nav;
+    /*border: 2px solid blue;*/
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.header-content {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
+}
+
+.burger-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 30px;
+    font-size: 30px;
+}
+
+.nav-items {
+    display: none;
+}
+
+/*playground*/
+
+main {
+    display: flex;
     justify-content: center;
-    overflow-x: hidden;
-    height: 100vh;
-    margin: 0;
+    align-items: center;
+    grid-area: main;
+    /*border: 2px solid red;*/
+}
+
+.playground {
+
+    width: min(80vw, 70vh);
+    height: min(80vw, 70vh);
+    max-width: 30rem;
+    max-height: 30rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #62929A;
+    gap: 3px;
+    opacity: 0.6;
+
+}
+
+.cell {
+    aspect-ratio: 1;
+    background-color: #363434;
+}
+
+/*settings*/
+
+
+
+footer {
+    grid-area: footer;
+    /*border: 2px solid orange;*/
+}
+
+footer p {
+    text-align: center;
+    margin: 10px;
+    color: #EFECEC;
+    font-size: 1.15rem;
+}
+
+
+
+.level-info span {
+    color: #4ecdc4;
+}
+
+
+.player-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.change-button {
+    height: 33%;
+    width: 25%;
+    max-width: 175px;
+    max-height: 175px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    margin: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.xoimg {
+    height: 50%;
+    width: 50%;
+
+}
+
+.change-to-O:hover {
+    border-color: #ff6b9d;
+    -webkit-box-shadow:0px 0px 36px 0px rgba(255,107,156,0.5);
+    -moz-box-shadow: 0px 0px 36px 0px rgba(255,107,156,0.5);
+    box-shadow: 0px 0px 36px 0px rgba(255,107,156,0.5);
+
+}
+
+.change-to-X:hover {
+    border-color: #4ecdc4;
+    -webkit-box-shadow:0px 0px 36px 0px rgba(78,205,197,0.5);
+    -moz-box-shadow: 0px 0px 36px 0px rgba(78,205,197,0.5);
+    box-shadow: 0px 0px 36px 0px rgba(78,205,197,0.5);
+}
+
+@media (min-width: 537px) {
+    .level-info {
+        margin-top: 30px;
+    }
+}
+
+
+/*tablets*/
+@media (min-width: 768px) {
+    .burger-icon {
+        display: none;
+    }
+
+    .nav-items {
+        display: inline;
+    }
+
+    .nav-items a {
+        padding: 0 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #EFECEC;
+        transition: color .3s;
+    }
+
+    .nav-items a:hover {
+        color: #62929A;
+    }
+
+    footer p {
+        font-size: 1.25rem;
+    }
+}
+/*Desktop*/
+@media (min-width: 1200px) {
+
+    body {
+        min-height: 100vh;
+
+        grid-template-areas:
+        "nav main "
+        "footer main ";
+
+        grid-template-columns: 400px 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .player-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        padding: 40px 0;
+        border-right: 1px solid #1a1a1a;
+        border-bottom: 1px solid #1a1a1a;
+        margin: 0;
+
+    }
+
+    .header-content {
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    h1 {
+        margin-right: 0;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .nav-items a {
+        font-size: 1.45rem;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 20px;
+        border-right: 1px solid #1a1a1a;
+    }
+
+    .player-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .playground {
+        max-width: 36rem;
+        max-height: 36rem;
+
+    }
+
+    .change-button {
+        max-width: none;
+        max-height: none;
+        height: 100px;
+        width: 200px;
+    }
+
+    .xoimg {
+        height: 80%;
+        width: 80%;
+
+    }
+
+    .level-info {
+        margin-top: 5px;
+        font-size: 1.40rem;
+        margin-bottom: 100px;
+
+    }
+
 }

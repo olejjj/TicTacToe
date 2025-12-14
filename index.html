@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Title</title>
 </head>
 <body>
-  <h1>Project Starter</h1>
+
+    <nav>
+        <div class="wrapper">
+            <div class="header-content">
+                <h1>TIC TAC TOE</h1>
+                <button class="burger-icon"><i class="fa-solid fa-bars" style="color: #efecec;"></i></button>
+                <div class="nav-items">
+                    <a href="#">Easy</a>
+                    <a href="#">Hard</a>
+                    <a href="#">Impossible</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="playground">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+    </main>
+    <footer>
+        <p class="level-info">Current level: <span>Easy</span></p>
+        <p style="font-size: 1.10rem">Start the game or select a player</p>
+        <div class="player-buttons">
+            <button class="change-button change-to-X"><img class="xoimg" src="/icons/x.svg" alt="X"></button>
+            <button class="change-button change-to-O"><img class="xoimg" src="/icons/o.svg" alt="O" style="transform: scale(0.75);"></button>
+        </div>
+    </footer>
+
+
+
 <script src="script.js"></script>
 </body>
 </html>
