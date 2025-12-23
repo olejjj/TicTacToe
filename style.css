@@ -78,18 +78,32 @@ main {
     grid-template-rows: repeat(3, 1fr);
     background-color: #62929A;
     gap: 3px;
-    opacity: 0.6;
+    background-color: rgba(98, 146, 154, 0.6);
 
 }
 
 .cell {
     aspect-ratio: 1;
     background-color: #363434;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.O {
+
+    height: 64%;
+    width: 64%;
+
+}
+
+.X {
+    height: 80%;
+    width: 80%;
 }
 
 /*settings*/
-
-
 
 footer {
     grid-area: footer;
@@ -133,19 +147,32 @@ footer p {
 
 }
 
-.change-to-O:hover {
+.buttonO:hover {
     border-color: #ff6b9d;
     -webkit-box-shadow:0px 0px 36px 0px rgba(255,107,156,0.5);
     -moz-box-shadow: 0px 0px 36px 0px rgba(255,107,156,0.5);
     box-shadow: 0px 0px 36px 0px rgba(255,107,156,0.5);
-
 }
 
-.change-to-X:hover {
+.buttonX:hover {
     border-color: #4ecdc4;
     -webkit-box-shadow:0px 0px 36px 0px rgba(78,205,197,0.5);
     -moz-box-shadow: 0px 0px 36px 0px rgba(78,205,197,0.5);
     box-shadow: 0px 0px 36px 0px rgba(78,205,197,0.5);
+}
+
+.activeX {
+    border-color: #4ecdc4;
+    -webkit-box-shadow:0px 0px 36px 0px rgba(78,205,197,0.5);
+    -moz-box-shadow: 0px 0px 36px 0px rgba(78,205,197,0.5);
+    box-shadow: 0px 0px 36px 0px rgba(78,205,197,0.5);
+}
+
+.activeO {
+    border-color: #ff6b9d;
+    -webkit-box-shadow:0px 0px 36px 0px rgba(255,107,156,0.5);
+    -moz-box-shadow: 0px 0px 36px 0px rgba(255,107,156,0.5);
+    box-shadow: 0px 0px 36px 0px rgba(255,107,156,0.5);
 }
 
 @media (min-width: 537px) {
